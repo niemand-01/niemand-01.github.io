@@ -28,7 +28,7 @@ twitter_username: TBD
 github_username:  niemand-01
 
 # Build settings
-remote_theme: daviddarnes/alembic
+theme: Hacker
 plugins:
   - jekyll-feed
 
