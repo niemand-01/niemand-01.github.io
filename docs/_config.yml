@@ -28,7 +28,8 @@ twitter_username: TBD
 github_username:  niemand-01
 
 # Build settings
-theme: Cayman
+remote_theme: mmistakes/minimal-mistakes
+
 plugins:
   - jekyll-feed
   - jekyll-remote-theme # add this line to the plugins list if you already have one
