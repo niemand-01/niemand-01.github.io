@@ -28,7 +28,7 @@ twitter_username: TBD
 github_username:  niemand-01
 
 # Build settings
-theme: cayman
+theme: minima
 
 plugins:
   - jekyll-feed
