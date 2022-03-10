@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "niemand-01"
   avatar : "/assets/images/tkk.jpg"
-  bio    : "A person with desire but no moltivation"
+  bio    : "A person with desire but no motivation"
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
