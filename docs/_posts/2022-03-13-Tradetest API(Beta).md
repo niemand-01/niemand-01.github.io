@@ -12,15 +12,8 @@ Welcome to the beta version of tradetest.
 **FYI:** The beta version of tradetest API can be partially supported, if you find malfunction of some functionality, please leave us a message.
 {: .notice}
 
-**  **
-{: .notice--primary}
-- Description:
 
-- Params:
-
-- Return:
-
-** order_volume(symbol=None,volume=100,order_side=OrderSide_Buy,position_effect=PositionEffect_Open,event=None) **
+**order_volume(symbol=None,volume=100,order_side=OrderSide_Buy,position_effect=PositionEffect_Open,event=None)**
 {: .notice--primary}
 
 - Description: Provided interface to broker or a simulated broker. It can be called multiple times inside algo function, whilst each call results in an order to be placed in system.
@@ -35,7 +28,7 @@ Welcome to the beta version of tradetest.
 - Return:
   - None
 
-** get_history(symbol=None,start=None,end=None,prepost=True,interval='1d',period='1mo') **
+**get_history(symbol=None,start=None,end=None,prepost=True,interval='1d',period='1mo')**
 {: .notice--primary}
 - Description:
   - Function wrapper for yf.download. Get historical OHLCV data for target security.
@@ -50,7 +43,7 @@ Welcome to the beta version of tradetest.
 
 
 
-** get_fundamentals(symbol=None) **
+**get_fundamentals(symbol=None)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance, get fundamental brief of a symbol.
@@ -62,7 +55,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_financials(symbol=None,quarterly=True) **
+**get_financials(symbol=None,quarterly=True)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance, get financial report of a symbol.
@@ -74,7 +67,7 @@ Welcome to the beta version of tradetest.
 - Return:
   - pd.Dataframe
 
-** get_balance_sheet(symbol=None,quarterly=True) **
+**get_balance_sheet(symbol=None,quarterly=True)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance, get balance sheet of a symbol.
@@ -86,7 +79,7 @@ Welcome to the beta version of tradetest.
 - Return:
   - pd.Dataframe
 
-** get_cash_flow(symbol=None,quarterly=True) **
+**get_cash_flow(symbol=None,quarterly=True)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance, get cash flow of a symbol.
@@ -99,7 +92,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_earnings(symbol=None,quarterly=True) **
+**get_earnings(symbol=None,quarterly=True)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance, get earning report of a symbol.
@@ -112,7 +105,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_institutional_holders(symbol=None) **
+**get_institutional_holders(symbol=None)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance 
@@ -123,7 +116,7 @@ Welcome to the beta version of tradetest.
 - Return:
   - pd.Dataframe
 
-** get_major_holders(symbol=None) **
+**get_major_holders(symbol=None)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance 
@@ -134,7 +127,7 @@ Welcome to the beta version of tradetest.
 - Return:
   - pd.Dataframe
 
-** get_analysts_recommendations(symbol=None) **
+**get_analysts_recommendations(symbol=None)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance 
@@ -146,7 +139,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_next_release(symbol=None) **
+**get_next_release(symbol=None)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance. Next major press event date.
@@ -158,7 +151,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_options_max(symbol=None,type="call") **
+**get_options_max(symbol=None,type="call")**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance. Get all symbol related option chains regardless of due date.
@@ -171,7 +164,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_options(symbol=None,type="call",date=None) **
+**get_options(symbol=None,type="call",date=None)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance. Get all symbol related option chains given proposed due date.
@@ -184,7 +177,7 @@ Welcome to the beta version of tradetest.
 - Return:
   - pd.Dataframe
 
-** get_news(symbol=None) **
+**get_news(symbol=None)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance. Get news availble on yahoo for a symbol.
@@ -196,7 +189,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_dividends(symbol=None) **
+**get_dividends(symbol=None)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance. Get dividends share for a symbol if there are any.
@@ -208,7 +201,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_splits(symbol=None) **
+**get_splits(symbol=None)**
 {: .notice--primary}
 - Description:
   - Function wrapper for yfinance. Get splits share for a symbol if there are any.
@@ -220,7 +213,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_constituents(index=None) **
+**get_constituents(index=None)**
 {: .notice--primary}
 - Description:
   - Get composites of an index(used ETF in background).
@@ -231,7 +224,7 @@ Welcome to the beta version of tradetest.
 - Return:
   - pd.Dataframe
 
-** get_all_sectors() **
+**get_all_sectors()**
 {: .notice--primary}
 - Description:
   - Get all sectors' names in NASDAQ
@@ -242,7 +235,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_all_industries() **
+**get_all_industries()**
 {: .notice--primary}
 - Description:
   - Get all industries' names in NASDAQ
@@ -253,7 +246,7 @@ Welcome to the beta version of tradetest.
   - pd.Dataframe
 
 
-** get_composites(sector=None,industry=None) **
+**get_composites(sector=None,industry=None)**
 {: .notice--primary}
 - Description:
   - Get components of a specific sector, or of an industry or both. If both params are given, first serach sector then industry.
