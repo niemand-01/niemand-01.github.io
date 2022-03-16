@@ -58,7 +58,7 @@ Because TradeRepubic only supported one-side limit price setting, we need to tak
 - That leaves us with 2 options: 
   - limit price for stop loss & while loop for stop profit (1)
   - limit price for stop profit & while loop for stop loss (2)
-  - while loop for stop loss & stop profit
+  - while loop for stop loss & stop profit (3)
 
 But keep in mind, because we are monitoring the market price on a 500ms basis, thus, the target price may be slided. Depends on purposes, we can choose among three options. 
 
@@ -122,3 +122,7 @@ tr.limit_order(order_id = '123',
         limit=tr.ticker(isin)[0]['last']['price'],
         expiry='gfd')
 ```
+
+- Some technical credit cookies:
+  - We use the trblockapi, which is a sync version of running all async functions until complete, using event_loop.run_until_complete(). 
+  - I tried to implement the while loop in async function, then run the wrapper function using run_until_complete, but due to intrinsic API design, we need to do extra work `start()` to confirm the integrity of contents/decrypt contents received, which requires extra coding. Nevertheless, while loop inside async func is possible, according to [this](https://stackoverflow.com/questions/62218336/async-function-call-inside-while-loop).
