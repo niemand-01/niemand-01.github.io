@@ -1,5 +1,5 @@
 ---
-title: "Deep Q-learning"
+title: "Deep Q-learning in trading"
 excerpt_separator: "<!--more-->"
 categories:
   - AI
@@ -15,7 +15,7 @@ I have learned a lot about DL, traditional ML and CV stuff during my master, but
 Deep Q learning is a combination of Deep Learning and Q-learning, where Q-learning is a subcategory of Reinforcement learning 
 which is named after its action-value function Q.
 
-For readers who have interest on digging into mathematical source of Q-learning, i recommand reading these zhihu tutorials: [DQN3](https://zhuanlan.zhihu.com/p/21340755?refer=intelligentunit),[DQN4](https://zhuanlan.zhihu.com/p/21378532?refer=intelligentunit),[DQN5](https://zhuanlan.zhihu.com/p/21421729). A more pragmatical tutorial with pseudo-codes for Q-learning, [this](https://www.analyticsvidhya.com/blog/2019/04/introduction-deep-q-learning-python/) article would be helpful. The main focus for this blog is placed on the review of trading-bot, which is a python lib for applying DQN in trading, source is [here](https://github.com/pskrunner14/trading-bot).
+For readers who have interest on digging into mathematical source of Q-learning, i recommand reading these zhihu tutorials: [DQN3](https://zhuanlan.zhihu.com/p/21340755?refer=intelligentunit),[DQN4](https://zhuanlan.zhihu.com/p/21378532?refer=intelligentunit),[DQN5](https://zhuanlan.zhihu.com/p/21421729). A more pragmatical tutorial with pseudo-codes for Q-learning can be found in [this](https://www.analyticsvidhya.com/blog/2019/04/introduction-deep-q-learning-python/) article. The main focus for this blog is however placed on the review of trading-bot, which is a python lib for applying DQN in trading, source is [here](https://github.com/pskrunner14/trading-bot).
 
 ## Learning Environment for RL in trading
 - Action at each timestep t:
@@ -24,8 +24,7 @@ For readers who have interest on digging into mathematical source of Q-learning,
   - Ideally: current market/stock status at timestep t (OHLCV Data)
   - Trading-bot: sigmoid wrapped intraday Stock Close Price Difference 
     - which is Close(t)-Close(t-1)
-    - Size: 10 which is the oberserve window size
-    - I dont understand reasons, will keep digging
+    - Size: 10 which is the oberserve window size backwards
 - Reward:
   - If Action is Sell: 
     - Reward = Sell Price-Buy Price 
