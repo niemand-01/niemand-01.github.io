@@ -9,7 +9,7 @@ tags:
   - Attention
 ---
 
-Motives for composing this article was based on attending in a BW Start-up, who mainly focused on music transcription.
+Motives for composing this article was based on attending in a BW Start-up, who mainly focused on AI music transcription.
 Plus got a ML Job Interview which has NLP as a "shot in the head" in its description. Thus all these circumstances stress me out and i want to get myself
 somewhat prepared.
 
@@ -33,33 +33,36 @@ A drawback of Seq2Seq appears when irrelevant information is forced to be encode
 
 Though there are pics with better quality, i like this one because it dissects the architecture straightforwardly. ![Vanilla Transformer](https://pic3.zhimg.com/80/v2-5d73a494057916aa6dd9858b6acb754a_720w.jpg). ![Vanilla Better Quality](https://d33wubrfki0l68.cloudfront.net/a76be57763d942798f8081b77edf8f078720cd45/bd31a/img/transformer_architecture_positional_encoding/model_arc.jpg).
 
+The target of network is to maximize the probability of predicting the next word correctly.
 Important sections of vanilla Transformer are listed below:
-- Input Embedding
+- **Input Embedding**
 Word to Vec, can be simply one-hot encoding of all words or leveraging FastText/Word2Vec to **classify** words.
-- Positional Encoding
+- **Positional Encoding**
 [This](https://kazemnejad.com/blog/transformer_architecture_positional_encoding/) article described the positional encoding very throughly, which i recommend to read. In short, positional encoding answers the questions of where a word/token is located in a sentence and how we can **mark** it?
   - Either we do it ephemerally which is give each token an increasing number from 1 till length of sentence. But it has 2 drawbacks: dimension dilemma and no fixed sentence length.
   - Sinuous encoding. The inituition comes from the binary encoding, where the sequence of number is encoded using also a similar techniques.
 
-- Multi-head Attention
+- **Multi-head Attention**
 Always start from the fine-grained part of a system, so before talk about multi-head, first let us look at single-head attention.
-  - Attention
-  Attention is in NLP world **the weight** that needs to be placed on each token/world embedding. There are couple of techniques derived from the basic Query-key-value methodology, let us first look at the primitive one.
-    - Query Key Value
+  - **Attention** is in NLP world **the weight** that needs to be placed on each token/world embedding. There are couple of techniques derived from the basic Query-key-value methodology, let us first look at the primitive one.
+    - **Query Key Value**
     [This](https://stats.stackexchange.com/questions/421935/what-exactly-are-keys-queries-and-values-in-attention-mechanisms) answer makes a good analogy: the query(string we type in search bar of youtube), Key(the unique identifier attached to each video) and the Value(the video resource).
       - for better formal word explanation, this [wiki](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model) helps a lot.
       - It says **the query Wq,key Wk,value Wv weights** are to be learned.
       - root of dk is for stabilizing gradients during training
       - Overview of all mathematical symbols can be found here. ![Transformer symbols](https://pic4.zhimg.com/80/v2-6cee80283472cb3acdff2c210af645ff_720w.jpg)
 
-- Multi-head Attention
-For ssame input, we can have multiple attention mechanisms for defining and extracting different word relevance in between. Technically, the final output is concatenation of multiple Attentions then scale-dot it with **Multi-head Weight Wo**(the linear)
+- **Multi-head Attention**
+  - For ssame input, we can have multiple attention mechanisms for defining and extracting different word relevance in between. Technically, the final output is concatenation of multiple Attentions then scale-dot it with **Multi-head Weight Wo**(the linear)
 ![Multi-head Attention](https://pic3.zhimg.com/80/v2-eeb9944f0261875ec28d5e80821becd6_720w.jpg)
 
-- Masked Multi-head Attention(Decoder)
-Masked simply means from my understanding set 0 in corresponding places of **Multi-head Weight Wo**
+- **Masked Multi-head Attention(Decoder)**
+  - Masked simply means from my understanding set 0 in corresponding places of **Multi-head Weight Wo**, which lets the decoder Attenion layer doesn't has future information.
 ![Masked Multi-head Attention illustrated](https://jinglescode.github.io/assets/img/posts/illustrated-guide-transformer-13.jpg)
 
-- Input & Output
-We have 2 inports: encoder and decoder inputs. Input of Decoder: Ouputs(shifted right) means the output(current prediction of next word) is the input in Decoder of next time step.
+- **Input & Output**
+  - We have 2 inputs: encoder and decoder inputs. Input of Decoder: Ouputs(shifted right) means the output(current prediction of next word) is the input in Decoder of next time step.
 ![Animation of IO](https://jinglescode.github.io/assets/img/posts/illustrated-guide-transformer-15.gif)
+
+- **Pre-training**
+  - No-label generative pretraining is an unspervised training, which is the first step of training GPT, the second step is fine-tuning for differentr tasks: classification, Entailment(A sentence includes B?) Similarity, Multiple choices etc.
