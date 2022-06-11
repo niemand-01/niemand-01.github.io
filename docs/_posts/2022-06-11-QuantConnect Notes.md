@@ -114,7 +114,10 @@ class MyStrategy(QCAlgorithm):
       self.sma = CustomSimpleMovingAverage("CustomSMA", 30)
       self.RegisterIndicator(self.spy, self.sma, Resolution.Daily)
 
-      <!-- or no indicator class is needed if we dont use OnData function to get data. Instead this post (https://www.quantconnect.com/forum/discussion/9597/the-in-amp-out-strategy-continued-from-quantopian/p9) shows that you can just write a schedule with a handler function. Inside this handler, we inquiry the self.History which returns a pandas dataframe, then we can do our familiar pandas tricks & build an indicator column. -->
+      # or no indicator class is needed if we dont use OnData function to get 
+      # data. Instead this post (https://www.quantconnect.com/forum/discussion/
+      # 9597/the-in-amp-out-strategy-continued-from-quantopian/p9) shows that you # can just write a schedule with a handler function. Inside this handler, 
+      # we inquiry the self.History which returns a pandas dataframe, then we can # do our familiar pandas tricks & build an indicator column.
 
       # we may want to warm up for indicators using historical data
       self.SetWarmUp(timedelta(7)) # Warm up 7 days of data.
