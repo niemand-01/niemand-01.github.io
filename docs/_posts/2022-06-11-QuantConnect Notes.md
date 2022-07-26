@@ -30,6 +30,7 @@ Driven by job requirements, QuantConnect will be a handy platform for me to writ
   - [Documentation v1](https://www.quantconnect.com/docs/algorithm-reference/universes#Universes-Configuring-Universe-Securities)
   - [Backtesting Engine Lean Github Repo](https://github.com/QuantConnect/Lean)
   - [All in one Class QCAlgorithm](https://www.quantconnect.com/docs/algorithm-reference/overview#Overview-Introduction)
+  - [Demos for Alphamodel](https://github.com/QuantConnect/Lean/tree/master/Algorithm.Python/Alphas)
 
 
 Nonetheless, techincal difficulty can be solved with help of community I suppose and the more we learn, the more we can achieve better alpha. In following paragraphes, i would like to take down the key notes i summarized during last week.
@@ -68,6 +69,20 @@ That is indeed fine-grained version of the one i show below, at least from first
 
 I was trying to consolidate functions sequential structured & tidy when i wrote my own backtesting framework. The hardcore is however that many parameters/decision makings are tangled with each other (e.x. i want to exit the market if i achieved 5% winrate on certain equity), i dont know how QuantConnect solved this problem, but i believe that is at least part of the reason why community rarely use the framework above, but use the straightforward one below.
 
+Update 26.07.2022:
+- HOWTO construct Alphamodel:
+  - [AlphaModel](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/alpha/key-concepts?ref=v1#01-Introduction)
+  - [Predefined Model](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/alpha/supported-models)
+- HOWTO construct Portfolio model:
+  - [PortfolioModel](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/portfolio-construction/key-concepts)
+  - [Predefined Portfolio Model](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/portfolio-construction/supported-models)
+- HOWTO construct Risk Model:
+  - [RiskManagementModel](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/risk-management/key-concepts)
+  - [PredefinedRiskManagementModel](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/risk-management/supported-models)
+
+- HOWTO construct Execution Model:
+  - [ExecutionModel](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/execution/key-concepts)
+  - [PredefinedExecutionModel](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/execution/supported-models)
 More popular class looks like this 
 ```
 class MyStrategy(QCAlgorithm):
