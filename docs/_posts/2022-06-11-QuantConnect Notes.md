@@ -83,6 +83,8 @@ Update 26.07.2022:
 - HOWTO construct Execution Model:
   - [ExecutionModel](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/execution/key-concepts)
   - [PredefinedExecutionModel](https://www.quantconnect.com/docs/v2/writing-algorithms/algorithm-framework/execution/supported-models)
+
+
 More popular class looks like this 
 ```
 class MyStrategy(QCAlgorithm):
